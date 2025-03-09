@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: rgb(20, 20, 20);
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(245, 255, 255, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(245, 255, 255, 0.5);
+}
+
+header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  border: 1px solid #232323;
+  box-shadow: 0px 8px 25px -8px #000;
+}
+header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../img/money\ heist1.jpg) no-repeat center center/cover;
+  opacity: 0.5;
+  filter: blur(0.5px);
+  box-shadow: inset 0em -6em 6em -1em #000;
+  image-rendering: smooth;
+  z-index: -1;
+}
+header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #000);
+  z-index: -1;
+}
+
+header video {
+  position: absolute;
+  width: 140%;
+  height: 170%;
+  top: -30%;
+  left: -20%;
+  z-index: -1;
+}
+
+/* Navigation Bar */
+header nav {
+  width: 100%;
+  height: 100%;
+  /* border-bottom: 1px solid #d4d4d4; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 50px;
+}
+
+.logo_ul .first_name,
+.logo_ul .second_name {
+  letter-spacing: 0.2px;
+  /* font-family: "poppins"; */
+  font-size: 1.3em;
+}
+
+.logo_ul .first_name {
+  color: #fff;
+}
+.logo_ul .second_name {
+  color: orange;
+  color: red;
+}
+
+header nav .logo_ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header nav .logo_ul ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  /* background-color: #000; */
+  /* position: relative; */
+  /* left: 74%; */
+  /* margin-left: 0; */
+}
+header nav .logo_ul ul li {
+  padding: 3px 10px;
+}
+header nav .logo_ul ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "poppins";
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.3s linear;
+  padding: 0.2rem 0.3rem;
+  border-radius: 7px;
+}
+
+header nav .logo_ul li a:hover {
+  color: rgb(20, 20, 20, 0.7);
+  background: rgb(255, 255, 255, 0.2);
+}
+
+/* Page Bar  */
+
+header nav .page_bar {
+  position: absolute;
+  top: 50px;
+  width: 300px;
+  padding: 5px;
+  border-radius: 20px;
+  /* display: grid; */
+  display: none;
+  opacity: 0; /* Menu tersembunyi pada awalnya */
+  transition: opacity 0.3s ease; /* Transisi untuk opacity */
+}
+
+.page_bar.show {
+  display: grid;
+  opacity: 1; /* Menu menjadi terlihat */
+  transition: opacity 0.3s ease; /* Saat ditampilkan, transisi menjadi terlihat */
+}
+
+header nav .page_bar ul {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header nav .page_bar ul li {
+  padding: 5px;
+  font-size: 12px;
+  align-items: center;
+  text-align: center;
+}
+header nav .page_bar ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: 500ms linear;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 2px 5px;
+  background-color: rgba(46, 46, 46, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+header nav .page_bar ul li a:hover {
+  color: red;
+  border: 1px solid red;
+  border-radius: 20px;
+  scale: 0.96;
+}
+
+/* Search */
+header nav .search_user {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+header nav .search_user input {
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: rgba(241, 117, 117, 0.3);
+  color: #fff;
+  margin-right: 10px;
+}
+header nav .search_user input::placeholder {
+  color: rgb(255, 255, 255, 0.5);
+}
+header nav .search_user img {
+  margin-right: 90px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+/* Others Fitur */
+header .other_fitur {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+header .other_fitur a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0 0.5em;
+}
+header .other_fitur a .bi-heart:hover {
+  color: red;
+}
+
+header .other_fitur a .bi-hourglass-split {
+  margin-right: 5px;
+}
+
+header .other_fitur a .bi-hourglass-split:hover {
+  color: red;
+}
+
+/* Search result */
+header nav .search_user .search {
+  position: absolute;
+  max-width: 250px;
+  width: 100%;
+  height: 200px;
+  right: 120px;
+  top: 150%;
+  z-index: 99999;
+  overflow-y: auto;
+}
+
+/* scroll bar Page Result search */
+header nav .search_user .search::-webkit-scrollbar {
+  width: 5px;
+}
+
+header nav .search_user .search::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 0 0 0 5px;
+  visibility: hidden;
+}
+header nav .search_user .search:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+  background: rgba(255, 0, 0, 0.25);
+}
+
+/* Card */
+header nav .search_user .search .card {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: none;
+  /* display: flex; */
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 3px 0px;
+  text-decoration: none;
+  transition: 0.3s linear;
+  box-shadow: 0px 3px 5px rgb(20, 20, 20, 0.7);
+}
+
+header nav .search_user .search .card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  z-index: -1;
+}
+header nav .search_user .search .card:hover {
+  background: rgb(255, 255, 255, 0.3);
+  border-radius: 5px;
+  color: #000;
+  scale: 0.98;
+}
+
+header nav .search_user .search .card img {
+  width: 32px;
+  height: 90%;
+  border-radius: 2px;
+  margin-left: 8px;
+  object-fit: cover;
+}
+
+header nav .search_user .search .card .cont {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-left: -80px;
+  color: #fff;
+  flex-basis: auto; /* Biarkan teks mengisi ruang */
+  min-width: 0; /* mencegah teks terlalu panjang */
+}
+
+header nav .search_user .search .card .cont h3,
+header nav .search_user .search .card .cont p {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+header nav .search_user .search .card .cont h3,
+header nav .search_user .search .card .cont p {
+  flex-basis: auto;
+  min-width: 0;
+}
+
+header nav .search_user .search .card .cont h3 {
+  width: auto;
+  max-width: 100%; /* Hindari melebihi container */
+  font-size: 16px;
+  line-height: 25px;
+  overflow: hidden;
+  letter-spacing: 1px;
+}
+
+header nav .search_user .search .card .cont p {
+  width: auto;
+  max-width: 100%;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #000;
+  font-weight: 300;
+  display: flex;
+}
+
+header nav .search_user .search .card .cont span {
+  background: red;
+  color: #000;
+  padding: 0px 5px;
+  border-radius: 5px;
+  margin: 0 5px 0 0;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+header nav .search_user .search .card .cont .bi-star-fill {
+  color: red;
+  margin: 0 2px 0 0;
+}
+
+/* Name */
+header .content {
+  position: relative;
+  color: #fff;
+  margin-top: 150px;
+  padding-left: 50px;
+  text-shadow: 1px 1px 20px #000;
+  letter-spacing: 0.5px;
+}
+
+/* header .content h1 {
+  font-size: 2.5em;
+  width: auto;
+} */
+
+header .content img {
+  width: 350px;
+  /* margin: 5px; */
+  padding: 0 0 5px 0;
+}
+
+header .content p {
+  font-size: 0.65em;
+  width: 50%;
+  padding: 0 0 5px 0;
+}
+
+/* details */
+header div .details ul {
+  /* width: 250px; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0 0 5px 0;
+}
+
+header div .details ul li {
+  padding: 0 10px 0 0;
+  font-size: 0.9em;
+}
+header div .details ul li .bi-badge-hd {
+  color: red;
+  font-size: 1.5em;
+}
+header div .details ul li .bi-star-fill {
+  font-size: 0.7em;
+  color: red;
+  margin: 0 5px 0 0;
+}
+/* Play and See More */
+header div .chooses {
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
+header div .chooses .play {
+  position: relative;
+  border: 1px solid #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: #fff;
+  transition: 0.3s linear;
+}
+
+header div .chooses .play::before {
+  content: "";
+  position: absolute;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+header div .chooses .play:hover {
+  color: red;
+  scale: 0.98;
+  border-radius: 20px;
+  border-bottom: 1px solid #fff;
+}
+header div .chooses .see_more {
+  position: relative;
+  border: 1px solid #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: #fff;
+  transition: 0.3s linear;
+}
+
+header div .chooses .see_more::before {
+  content: "";
+  position: absolute;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+header div .chooses .see_more:hover {
+  border-radius: 20px;
+  color: red;
+  scale: 0.98;
+}
