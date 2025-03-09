@@ -139,15 +139,18 @@ header nav .page_bar {
   padding: 5px;
   border-radius: 20px;
   /* display: grid; */
-  display: none;
-  opacity: 0; /* Menu tersembunyi pada awalnya */
   transition: opacity 0.3s ease; /* Transisi untuk opacity */
+  opacity: 0;
+  transform: translateY(-10px); /* Start slightly above */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
 .page_bar.show {
   display: grid;
   opacity: 1; /* Menu menjadi terlihat */
   transition: opacity 0.3s ease; /* Saat ditampilkan, transisi menjadi terlihat */
+  opacity: 1;
+  transform: translateY(0); /* Moves to normal position */
 }
 
 header nav .page_bar ul {
